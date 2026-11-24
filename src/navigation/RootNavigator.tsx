@@ -73,7 +73,7 @@ const adminBar = makeTabBar({
 
 function MemberTabsScreen() {
   return (
-    <MemberTabs.Navigator screenOptions={{ headerShown: false }} tabBar={memberBar}>
+    <MemberTabs.Navigator screenOptions={{ headerShown: false }} tabBar={(props) => React.createElement(memberBar, props)}>
       <MemberTabs.Screen name="Inicio" component={HomeScreen} />
       <MemberTabs.Screen name="Clases" component={ClassesScreen} />
       <MemberTabs.Screen name="CheckIn" component={CheckInScreen} />
@@ -85,7 +85,7 @@ function MemberTabsScreen() {
 
 function AdminTabsScreen() {
   return (
-    <AdminTabs.Navigator screenOptions={{ headerShown: false }} tabBar={adminBar}>
+    <AdminTabs.Navigator screenOptions={{ headerShown: false }} tabBar={(props) => React.createElement(adminBar, props)}>
       <AdminTabs.Screen name="Hoy" component={TodayScreen} />
       <AdminTabs.Screen name="Socios" component={MembersScreen} />
       <AdminTabs.Screen name="Escanear" component={ScanScreen} />
