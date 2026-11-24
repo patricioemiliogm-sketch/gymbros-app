@@ -1,0 +1,27 @@
+// Configuración de Cloudflare para GYM BROS
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gymbros",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-09-01",
+
+  // La app web (generada con "npm run build:web") se sirve desde dist/.
+  // /api y /setup los responde el servidor (worker/index.ts).
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/setup"]
+  },
+
+  // Base de datos D1. Crea una llamada "gymbros-db" en Cloudflare y pega aquí su ID.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gymbros-db",
+      "database_id": "PEGA-AQUI-EL-ID-DE-TU-BASE-D1"
+    }
+  ],
+
+  "observability": { "enabled": true }
+}

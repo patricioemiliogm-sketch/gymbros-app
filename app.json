@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "GYM BROS",
+    "slug": "gymbros-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B0B0B",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B0B0B"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "cl.gymbros.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "GYM BROS usa la cámara para escanear el QR de entrada de los socios."
+      }
+    },
+    "android": {
+      "package": "cl.gymbros.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B0B0B"
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "GYM BROS usa la cámara para escanear el QR de entrada de los socios."
+        }
+      ]
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "GYM BROS",
+      "shortName": "GYM BROS",
+      "themeColor": "#0B0B0B",
+      "backgroundColor": "#0B0B0B",
+      "lang": "es"
+    }
+  }
+}
